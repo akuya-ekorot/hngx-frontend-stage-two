@@ -6,6 +6,10 @@ const nextConfig = {
 				protocol: 'https',
 				hostname: 'www.movieposters.com',
 			},
+			{
+				protocol: 'https',
+				hostname: 'image.tmdb.org',
+			},
 		]
 	}
 }

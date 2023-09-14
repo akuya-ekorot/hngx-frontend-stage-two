@@ -9,9 +9,9 @@ const ChevronRight = () => (
     <path
       d="M7.5 4.66668L13.3333 10.5L7.5 16.3333"
       stroke="#B91C1C"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

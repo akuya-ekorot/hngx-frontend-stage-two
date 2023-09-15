@@ -19,3 +19,12 @@ interface Movie {
   vote_average: number;
   vote_count: number;
 }
+
+interface Trailer {
+  key: string;
+  name: string;
+  site: string;
+  size: number;
+  type: string;
+  official: boolean;
+}

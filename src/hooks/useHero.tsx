@@ -1,3 +1,4 @@
+import api from "@/utils/api";
 import { useEffect, useState } from "react";
 
 const useHero = (movies: Movie[]) => {
@@ -17,8 +18,18 @@ const useHero = (movies: Movie[]) => {
       i = (i + 1) % heroMovies.length;
     }, 5000);
 
-	return () => clearInterval(interval);
+    return () => clearInterval(interval);
   }, []);
+
+  // get trailer of active movie
+  useEffect(() => {
+	const getTrailer = async () => {
+	  const videos = await api.getTrailer(activeMovie.id);
+	  videos.length > 0 && videos[0].key && setActiveMovie((prev) => ({ ...prev, trailer: videos[0].key }));
+	};
+
+	getTrailer();
+  }, [activeMovie]);
 
   return activeMovie;
 };

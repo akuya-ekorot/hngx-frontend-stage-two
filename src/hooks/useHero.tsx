@@ -7,6 +7,8 @@ const useHero = (movies: Movie[]) => {
   const heroMovies = movies.map((movie) => ({
     ...movie,
     backdrop: base_url + movie.backdrop_path,
+	index: movies.indexOf(movie),
+	trailer: "",
   }));
 
   const [activeMovie, setActiveMovie] = useState(heroMovies[0]);

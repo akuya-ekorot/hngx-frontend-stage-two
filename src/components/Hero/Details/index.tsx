@@ -3,7 +3,7 @@ import HeroButton from "../Button";
 const HeroDetails = ({
   activeMovie,
 }: {
-  activeMovie: Movie & { trailer: string };
+  activeMovie: Movie & { trailer: string; index: number };
 }) => {
   return (
     <div className="max-w-md ml-48 flex flex-col gap-4">

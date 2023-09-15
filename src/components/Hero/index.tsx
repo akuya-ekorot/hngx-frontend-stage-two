@@ -3,6 +3,7 @@
 import useHero from "@/hooks/useHero";
 import { FC } from "react";
 import HeroDetails from "./Details";
+import HeroPaginationBox from "./PaginationBox";
 
 const Hero: FC<{ details: Movie[] }> = ({ details }) => {
   const activeMovie = useHero(details);
@@ -16,7 +17,10 @@ const Hero: FC<{ details: Movie[] }> = ({ details }) => {
         <nav className="h-20 w-full border-b border-b-slate-900"></nav>
         <div className="flex items-center justify-between h-full">
           <HeroDetails activeMovie={activeMovie} />
-		  <div className="w-4 h-4 bg-red-600"></div>
+          <HeroPaginationBox
+            active={activeMovie.index}
+            length={details.length}
+          />
         </div>
       </div>
     </section>

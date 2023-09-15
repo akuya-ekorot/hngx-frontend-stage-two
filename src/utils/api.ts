@@ -49,14 +49,21 @@ class Api {
     return genres as Genre[];
   }
 
-
   // Get Backdrop Image
   async getBackdropImage(path: string) {
-	const res = await fetch(
-	  `https://image.tmdb.org/t/p/original${path}`,
-	);
-	const data = await res.json();
-	return data;
+    const res = await fetch(`https://image.tmdb.org/t/p/original${path}`);
+    const data = await res.json();
+    return data;
+  }
+
+  // Get trailer
+  async getTrailer(id: number) {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${this.key}&language=en-US`,
+    );
+    const data = await res.json();
+
+    return data.results as Trailer[];
   }
 }
 
